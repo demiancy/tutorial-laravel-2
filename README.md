@@ -11,7 +11,7 @@ https://www.youtube.com/watch?v=8KaBeq9JzrQ
 * I used Docker.
 
 # App
-Simple sales system
+Restaurant Reservation Website
 
 # Composer packages used
 
