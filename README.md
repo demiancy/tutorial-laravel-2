@@ -9,12 +9,14 @@ https://www.youtube.com/watch?v=8KaBeq9JzrQ
 
 ## Notes
 * I used Docker.
+* Use spatie/laravel-permission instead of a boolean (is_admin) to determine the user's role.
 
 # App
 Restaurant Reservation Website
 
 # Composer packages used
 * laravel/breeze
+* spatie/laravel-permission
 
 # Deployment
 
