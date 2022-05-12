@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             MenuSeeder::class,
             TableSeeder::class,
-            
         ]);
     }
 }

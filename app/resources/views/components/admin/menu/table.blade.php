@@ -21,7 +21,7 @@
                     <img src="{{ Storage::url($menu->image) }}" class="w-16 h-16 rounded">
                 </x-admin.index.td>
                 <x-admin.index.td>{{ $menu->description }}</x-admin.index.td>
-                <x-admin.index.td>{{ $menu->price }}</x-admin.index.td>
+                <x-admin.index.td>${{ $menu->price }}</x-admin.index.td>
                 <x-admin.index.td>
                     <div class="flex space-x-2">
                         <x-admin.index.edit-link :route="route('admin.menus.edit', $menu->id)"/>
