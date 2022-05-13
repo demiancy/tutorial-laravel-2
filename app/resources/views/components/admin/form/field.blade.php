@@ -4,6 +4,7 @@
 ])
 
 <input 
+    {!! $attributes !!}
     type="{{ $type }}" 
     id="{{ $field }}" 
     name="{{ $field }}"
