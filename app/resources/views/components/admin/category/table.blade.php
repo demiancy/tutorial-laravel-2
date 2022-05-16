@@ -24,6 +24,7 @@
                 <x-admin.index.td>
                     <div class="flex space-x-2">
                         <x-admin.index.edit-link :route="route('admin.categories.edit', $category->id)"/>
+                        <x-admin.index.delete-link :route="route('admin.categories.destroy', $category->id)"/>
                     </div>
                 </x-admin.index.td>
             </tr>

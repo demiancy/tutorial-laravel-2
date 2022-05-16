@@ -118,8 +118,16 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        if ( !$category->delete() ) {
+            return to_route('admin.categories.index')
+                ->with('error', __('The category cannot delete'));
+        }
+
+        Storage::delete($category->image);
+
+        return to_route('admin.categories.index')
+            ->with('danger', 'Category deleted successfully.');
     }
 }
