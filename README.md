@@ -11,6 +11,7 @@ https://www.youtube.com/watch?v=8KaBeq9JzrQ
 * I used Docker.
 * Use spatie/laravel-permission instead of a boolean (is_admin) to determine the user's role.
 * The admin middleware it was replaced by middleware of spatie/laravel-permission.
+* I added more validations on forms.
 
 # App
 Restaurant Reservation Website
