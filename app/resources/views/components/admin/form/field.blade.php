@@ -12,5 +12,6 @@
     type="{{ $type }}" 
     id="{{ $field }}" 
     name="{{ $field }}" 
+    value="{{ old($field) }}"
 />
 
