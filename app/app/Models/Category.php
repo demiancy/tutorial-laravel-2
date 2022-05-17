@@ -19,4 +19,12 @@ class Category extends Model
         'image',
         'description',
     ];
+
+    /**
+     * The menus that belong to the category.
+     */
+    public function menus()
+    {
+        return $this->belongsToMany(Menu::class);
+    }
 }

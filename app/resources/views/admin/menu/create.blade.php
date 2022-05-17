@@ -15,7 +15,7 @@
                                 field="price" 
                                 type="number"
                                 min="0.00" 
-                                max="10000.00" 
+                                max="100000.00" 
                                 step="0.01"
                             />
                         </x-admin.form.field>
@@ -32,8 +32,12 @@
                                 id="description" 
                                 rows="3" 
                                 name="description"
-                                class="shadow-sm focus:ring-indigo-500 appearance-none bg-white border py-2 px-3 text-base leading-normal transition duration-150 ease-in-out focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md @error('description') border-red-400 @enderror">
-                            </textarea>
+                                class="shadow-sm focus:ring-indigo-500 appearance-none bg-white border py-2 px-3 text-base leading-normal transition duration-150 ease-in-out focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md @error('description') border-red-400 @enderror"
+                            >{{ old('description') }}</textarea>
+                        </x-admin.form.field>
+
+                        <x-admin.form.container-field field="category">
+                            <x-admin.menu.categories-select :categories="$categories"/>
                         </x-admin.form.field>
 
                         <div class="mt-6 p-4 flex">

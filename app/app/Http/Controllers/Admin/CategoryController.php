@@ -120,6 +120,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        $category->menus()->detach();
+
         if (!$category->delete()) {
             return to_route('admin.categories.index')
                 ->with('error', __('The category cannot delete'));
