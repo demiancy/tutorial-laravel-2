@@ -75,7 +75,7 @@ class MenuController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Menu  $menu
      * @return \Illuminate\Http\Response
      */
     public function edit(Menu $menu)
@@ -90,7 +90,7 @@ class MenuController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\MenuUpdateRequest  $request
-     * @param  int  $id
+     * @param  Menu  $menu
      * @return \Illuminate\Http\Response
      */
     public function update(MenuUpdateRequest $request, Menu $menu)
@@ -120,11 +120,21 @@ class MenuController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Menu $menu)
     {
-        //
+        $menu->categories()->detach();
+
+        if (!$menu->delete()) {
+            return to_route('admin.menus.index')
+                ->with('error', __('The menu cannot delete'));
+        }
+
+        Storage::delete($menu->image);
+
+        return to_route('admin.menus.index')
+            ->with('danger', 'Menu deleted successfully.');
     }
 }

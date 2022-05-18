@@ -25,6 +25,7 @@
                 <x-admin.index.td>
                     <div class="flex space-x-2">
                         <x-admin.index.edit-link :route="route('admin.menus.edit', $menu->id)"/>
+                        <x-admin.index.delete-link :route="route('admin.menus.destroy', $menu->id)"/>
                     </div>
                 </x-admin.index.td>
             </tr>
