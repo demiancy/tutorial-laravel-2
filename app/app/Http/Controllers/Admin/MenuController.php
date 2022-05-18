@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Menu;
 use App\Models\Category;
 use App\Http\Requests\MenuStoreRequest;
+use App\Http\Requests\MenuUpdateRequest;
+use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
@@ -76,21 +78,43 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Menu $menu)
     {
-        //
+        return view('admin.menu.edit', [
+            'menu'       => $menu,
+            'categories' => Category::all()
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\MenuUpdateRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MenuUpdateRequest $request, Menu $menu)
     {
-        //
+        $image = $menu->image;
+
+        if ($request->hasFile('image')) {
+            Storage::delete($menu->image);
+            $image = $request->file('image')->store('public/menus');
+        }
+
+        $menu->update([
+            'name'        => $request->name,
+            'description' => $request->description,
+            'image'       => $image,
+            'price'       => $request->price
+        ]);
+
+        if ($request->has('categories')) {
+            $menu->categories()->sync($request->categories);
+        }
+
+        return to_route('admin.menus.index')
+            ->with('success', 'Menu updated successfully.');
     }
 
     /**

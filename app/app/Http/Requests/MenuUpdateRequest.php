@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MenuStoreRequest extends FormRequest
+class MenuUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +23,11 @@ class MenuStoreRequest extends FormRequest
      */
     public function rules()
     {
+        $menu = $this->menu;
+
         return [
-            'name'         => 'required|string|max:255|unique:menus',
-            'image'        => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'name'         => "required|string|max:255|unique:menus,name,{$menu->id}",
+            'image'        => 'image|mimes:jpeg,png,jpg|max:2048',
             'price'        => 'required|numeric|min:0',
             'description'  => 'required|string',
             'categories'   => 'required|array',
