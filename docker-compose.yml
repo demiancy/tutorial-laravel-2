@@ -9,7 +9,6 @@ services:
     ]
     volumes:
       - db_data:/var/lib/mysql
-      - ./logs/mysql:/var/log/mysql
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
