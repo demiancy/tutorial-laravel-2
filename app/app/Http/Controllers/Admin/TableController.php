@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Table;
 use App\Http\Requests\TableStoreRequest;
+use App\Http\Requests\TableUpdateRequest;
 
 class TableController extends Controller
 {
@@ -64,24 +65,29 @@ class TableController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Table  $table
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Table $table)
     {
-        //
+        return view('admin.table.edit', [
+            'table' => $table,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\TableUpdateRequest  $request
+     * @param  Table  $table
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TableUpdateRequest $request, Table $table)
     {
-        //
+        $table->update($request->validated());
+
+        return to_route('admin.tables.index')
+            ->with('success', 'Table updated successfully.');
     }
 
     /**
