@@ -93,11 +93,17 @@ class TableController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Table  $table
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Table $table)
     {
-        //
+        if (!$table->delete()) {
+            return to_route('admin.tables.index')
+                ->with('error', __('The table cannot delete'));
+        }
+
+        return to_route('admin.tables.index')
+            ->with('danger', 'Table deleted successfully.');
     }
 }
