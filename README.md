@@ -12,6 +12,7 @@ https://www.youtube.com/watch?v=8KaBeq9JzrQ
 * Use spatie/laravel-permission instead of a boolean (is_admin) to determine the user's role.
 * The admin middleware it was replaced by middleware of spatie/laravel-permission.
 * I added more validations on forms.
+* It is assumed that a table is occupied between 1 and 2 hours.
 
 # App
 Restaurant Reservation Website
