@@ -16,6 +16,6 @@
         {{ $slot }}
     </div>
     @error($field)
-        <div class="text-sm text-red-400">{{ $message }}</div>
+        <div class="text-sm text-red-700">{{ $message }}</div>
     @enderror
 </div>

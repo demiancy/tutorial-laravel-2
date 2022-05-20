@@ -5,7 +5,7 @@
 ])
 
 @php
-    $errorClass = $errors->has($field) ? 'border-red-400' : '';
+    $errorClass = $errors->has($field) ? 'border-red-700' : '';
 @endphp
 
 <input 
