@@ -129,12 +129,12 @@ class MenuController extends Controller
 
         if (!$menu->delete()) {
             return to_route('admin.menus.index')
-                ->with('error', __('The menu cannot delete'));
+                ->with('danger', __('The menu cannot delete'));
         }
 
         Storage::delete($menu->image);
 
         return to_route('admin.menus.index')
-            ->with('danger', 'Menu deleted successfully.');
+            ->with('success', 'Menu deleted successfully.');
     }
 }

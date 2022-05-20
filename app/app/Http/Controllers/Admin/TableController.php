@@ -100,10 +100,10 @@ class TableController extends Controller
     {
         if (!$table->delete()) {
             return to_route('admin.tables.index')
-                ->with('error', __('The table cannot delete'));
+                ->with('danger', __('The table cannot delete'));
         }
 
         return to_route('admin.tables.index')
-            ->with('danger', 'Table deleted successfully.');
+            ->with('success', 'Table deleted successfully.');
     }
 }

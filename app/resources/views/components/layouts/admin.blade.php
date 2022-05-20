@@ -9,8 +9,12 @@
 
             <!-- Page Content -->
             <main class="m-2 p-8 w-full">
-                <x-admin.common.flash-messages/>
-                {{ $slot }}
+                <div class="py-12">
+                    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                        <x-admin.common.flash-messages/>
+                        {{ $slot }}
+                    </div>
+                </div>
             </main>
         </div>
     </body>

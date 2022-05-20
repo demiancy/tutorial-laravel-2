@@ -124,12 +124,12 @@ class CategoryController extends Controller
 
         if (!$category->delete()) {
             return to_route('admin.categories.index')
-                ->with('error', __('The category cannot delete'));
+                ->with('danger', __('The category cannot delete'));
         }
 
         Storage::delete($category->image);
 
         return to_route('admin.categories.index')
-            ->with('danger', 'Category deleted successfully.');
+            ->with('success', 'Category deleted successfully.');
     }
 }
