@@ -9,6 +9,7 @@
 
             <!-- Page Content -->
             <main class="m-2 p-8 w-full">
+                <x-admin.common.flash-messages/>
                 {{ $slot }}
             </main>
         </div>

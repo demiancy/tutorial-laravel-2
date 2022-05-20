@@ -138,6 +138,7 @@ return [
     'space_for_guests' => 'The selected table does not have enough space for guests',
     'in_range_for_reservation' => 'Please choose the date between a week from now and the time between 17:00-23:00',
     'available_for_reservation' => 'The selected date and time is already occupied for the selected table',
+    'alert' => 'An error occurred while processing your request',
 
     /*
     |--------------------------------------------------------------------------
