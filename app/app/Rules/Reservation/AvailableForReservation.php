@@ -46,7 +46,7 @@ class AvailableForReservation implements Rule, DataAwareRule
      * @param  mixed  $value
      * @return bool
      */
-    public function passes($attribute, $value)
+    public function passes($attribute, $value, $id = null)
     {
         //Determines if the selected table is available for the selected date and time.
         if (is_numeric($this->data['table_id'])) {
@@ -56,6 +56,7 @@ class AvailableForReservation implements Rule, DataAwareRule
 
             return !Reservation::where('table_id', $this->data['table_id'])
                 ->whereBetween('date', [$start, $end])
+                ->whereNot('id', $id)
                 ->exists();
         }
 

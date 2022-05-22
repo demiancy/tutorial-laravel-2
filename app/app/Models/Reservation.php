@@ -40,4 +40,12 @@ class Reservation extends Model
     {
         return $this->belongsTo(Table::class);
     }
+
+    /**
+     * Determines if the reservation can be edited.
+     */
+    public function canEdit()
+    {
+        return $this->date > now();
+    }
 }

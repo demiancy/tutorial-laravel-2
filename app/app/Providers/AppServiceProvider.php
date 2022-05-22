@@ -34,9 +34,10 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Validator::extend('available_for_reservation', function ($attribute, $value, $parameters, $validator) {
+            $id = $parameters[0] ?? null;
             return (new AvailableForReservation())
                 ->setData($validator->getData())
-                ->passes($attribute, $value);
+                ->passes($attribute, $value, $id);
         });
 
         Validator::extend('in_range_for_reservation', function ($attribute, $value, $parameters, $validator) {

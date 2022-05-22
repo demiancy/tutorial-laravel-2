@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Reservation;
 use App\Models\Table;
 use App\Http\Requests\ReservationStoreRequest;
+use App\Http\Requests\ReservationUpdateRequest;
 
 class ReservationController extends Controller
 {
@@ -37,7 +38,7 @@ class ReservationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\ReservationStoreRequest  $request
+     * @param  ReservationStoreRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(ReservationStoreRequest $request)
@@ -62,24 +63,30 @@ class ReservationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Reservation $reservation)
     {
-        //
+        return view('admin.reservation.edit', [
+            'reservation' => $reservation,
+            'tables'      => Table::all()
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  ReservationUpdateRequest  $request
+     * @param  Reservation  $$reservation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ReservationUpdateRequest $request, Reservation $reservation)
     {
-        //
+        $reservation->update($request->validated());
+
+        return to_route('admin.reservations.index')
+            ->with('success', 'Reservation updated successfully.');
     }
 
     /**
