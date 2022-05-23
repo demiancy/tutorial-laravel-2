@@ -27,6 +27,7 @@
                         @if ($reservation->canEdit())
                             <x-admin.index.edit-link :route="route('admin.reservations.edit', $reservation->id)"/>
                         @endif
+                        <x-admin.index.delete-link :route="route('admin.reservations.destroy', $reservation->id)"/>
                     </div>
                 </x-admin.index.td>
             </tr>

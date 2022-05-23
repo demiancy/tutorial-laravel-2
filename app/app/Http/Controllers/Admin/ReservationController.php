@@ -92,11 +92,17 @@ class ReservationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Reservation $reservation)
     {
-        //
+        if (!$reservation->delete()) {
+            return to_route('admin.reservations.index')
+                ->with('danger', __('The reservation cannot delete.'));
+        }
+
+        return to_route('admin.reservations.index')
+            ->with('success', 'Reservation deleted successfully.');
     }
 }
