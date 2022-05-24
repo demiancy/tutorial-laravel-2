@@ -2,7 +2,7 @@
     <x-admin.common.title title="Edit table {{ $table->name }}"/>
 
     <div class="p-4 bg-slate-100 rounded">
-        <div class="space-y-8 divide-y divide-gray-200 mt-10">
+        <div class="space-y-8 divide-y divide-gray-200">
             <form method="POST" action="{{ route('admin.tables.update', $table->id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
@@ -37,7 +37,7 @@
                     />
                 </x-admin.form.field>
 
-                <div class="mt-6 p-4 flex">
+                <div class="mt-6 flex">
                     <x-admin.form.back-link :route="route('admin.tables.index')"/>
                     <x-admin.form.submit/>
                 </div>

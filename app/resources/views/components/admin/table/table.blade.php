@@ -21,7 +21,7 @@
                 <x-admin.index.td>{{ $table->status }}</x-admin.index.td>
                 <x-admin.index.td>{{ $table->location }}</x-admin.index.td>
                 <x-admin.index.td>
-                    <div class="flex space-x-2">
+                    <div class="flex space-x-2 justify-end">
                         <x-admin.index.edit-link :route="route('admin.tables.edit', $table->id)"/>
                         <x-admin.index.delete-link :route="route('admin.tables.destroy', $table->id)"/>
                     </div>

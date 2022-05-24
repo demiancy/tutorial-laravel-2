@@ -2,7 +2,7 @@
     <x-admin.common.title title="New menu"/>
 
     <div class="p-4 bg-slate-100 rounded">
-        <div class="space-y-8 divide-y divide-gray-200 mt-10">
+        <div class="space-y-8 divide-y divide-gray-200">
             <form method="POST" action="{{ route('admin.menus.store') }}" enctype="multipart/form-data">
                 @csrf
                 <x-admin.form.container-field field="name">
@@ -39,7 +39,7 @@
                     <x-admin.menu.categories-select :categories="$categories"/>
                 </x-admin.form.field>
 
-                <div class="mt-6 p-4 flex">
+                <div class="mt-6 flex">
                     <x-admin.form.back-link :route="route('admin.menus.index')"/>
                     <x-admin.form.submit/>
                 </div>
