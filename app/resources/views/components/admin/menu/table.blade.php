@@ -18,7 +18,7 @@
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                 <x-admin.index.td>{{ $menu->name }}</x-admin.index.td>
                 <x-admin.index.td>
-                    <img src="{{ Storage::url($menu->image) }}" class="w-16 h-16 rounded">
+                    <x-admin.common.img :file="$menu->image"/>
                 </x-admin.index.td>
                 <x-admin.index.td>{{ $menu->description }}</x-admin.index.td>
                 <x-admin.index.td>${{ $menu->price }}</x-admin.index.td>

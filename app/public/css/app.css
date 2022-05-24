@@ -758,9 +758,6 @@ select {
 .w-auto {
   width: auto;
 }
-.w-16 {
-  width: 4rem;
-}
 .w-full {
   width: 100%;
 }
@@ -778,6 +775,9 @@ select {
 }
 .w-48 {
   width: 12rem;
+}
+.w-16 {
+  width: 4rem;
 }
 .min-w-full {
   min-width: 100%;
@@ -909,11 +909,11 @@ select {
 .rounded-md {
   border-radius: 0.375rem;
 }
-.rounded {
-  border-radius: 0.25rem;
-}
 .rounded-lg {
   border-radius: 0.5rem;
+}
+.rounded {
+  border-radius: 0.25rem;
 }
 .rounded-l-md {
   border-top-left-radius: 0.375rem;

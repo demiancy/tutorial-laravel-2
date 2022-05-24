@@ -25,7 +25,10 @@
 
             <x-admin.form.container-field field="image">
                 <div class="my-2">
-                    <img class="w-32 h-32" src="{{ Storage::url($menu->image) }}">
+                    <x-admin.common.img 
+                        :file="$menu->image"
+                        size="32"
+                    />
                 </div>
                 <x-admin.form.field 
                     field="image" 

@@ -17,7 +17,7 @@
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                 <x-admin.index.td>{{ $category->name }}</x-admin.index.td>
                 <x-admin.index.td>
-                    <img src="{{ Storage::url($category->image) }}" class="w-16 h-16 rounded">
+                    <x-admin.common.img :file="$category->image"/>
                 </x-admin.index.td>
                 <x-admin.index.td>{{ $category->description }}</x-admin.index.td>
      
