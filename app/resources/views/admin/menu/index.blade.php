@@ -1,4 +1,6 @@
 <x-layouts.admin>
+    <x-admin.common.title title="Menus"/>
+
     <div class="flex justify-end">
         <x-admin.index.new-link 
             :route="route('admin.menus.create')"

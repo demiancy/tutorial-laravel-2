@@ -1,4 +1,6 @@
 <x-layouts.admin>
+    <x-admin.common.title title="Categories"/>
+
     <div class="flex justify-end">
         <x-admin.index.new-link 
             :route="route('admin.categories.create')"

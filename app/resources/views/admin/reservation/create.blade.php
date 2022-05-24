@@ -1,4 +1,6 @@
 <x-layouts.admin>
+    <x-admin.common.title title="New reservation"/>
+
     <div class="p-4 bg-slate-100 rounded">
         <div class="space-y-8 divide-y divide-gray-200 mt-10">
             <form method="POST" action="{{ route('admin.reservations.store') }}" enctype="multipart/form-data">

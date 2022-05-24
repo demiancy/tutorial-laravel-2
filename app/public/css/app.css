@@ -674,6 +674,9 @@ select {
 .-mt-px {
   margin-top: -1px;
 }
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -1040,11 +1043,11 @@ select {
 .p-4 {
   padding: 1rem;
 }
-.p-8 {
-  padding: 2rem;
-}
 .p-2 {
   padding: 0.5rem;
+}
+.p-8 {
+  padding: 2rem;
 }
 .px-4 {
   padding-left: 1rem;
@@ -1141,6 +1144,10 @@ select {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -1158,6 +1165,9 @@ select {
 }
 .font-semibold {
   font-weight: 600;
+}
+.font-bold {
+  font-weight: 700;
 }
 .uppercase {
   text-transform: uppercase;
@@ -1746,11 +1756,6 @@ select {
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-
-  .lg\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
   }
 }
 
