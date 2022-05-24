@@ -8,7 +8,7 @@
             <x-admin.nav.nav />
 
             <!-- Page Content -->
-            <main class="m-2 p-4 w-full">
+            <main class="p-4 w-full">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <x-admin.common.flash-messages/>
                     {{ $slot }}

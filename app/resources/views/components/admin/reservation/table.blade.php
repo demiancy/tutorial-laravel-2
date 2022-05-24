@@ -23,7 +23,7 @@
                 <x-admin.index.td>{{ $reservation->table->name }}</x-admin.index.td>
                 <x-admin.index.td>{{ $reservation->guest_number }}</x-admin.index.td>
                 <x-admin.index.td>
-                    <div class="flex space-x-2 justify-end">
+                    <div class="grid space-y-2">
                         @if ($reservation->canEdit())
                             <x-admin.index.edit-link :route="route('admin.reservations.edit', $reservation->id)"/>
                         @endif

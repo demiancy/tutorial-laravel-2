@@ -22,7 +22,7 @@
                 <x-admin.index.td>{{ $category->description }}</x-admin.index.td>
      
                 <x-admin.index.td>
-                    <div class="flex space-x-2 justify-end">
+                    <div class="grid space-y-2">
                         <x-admin.index.edit-link :route="route('admin.categories.edit', $category->id)"/>
                         <x-admin.index.delete-link :route="route('admin.categories.destroy', $category->id)"/>
                     </div>
