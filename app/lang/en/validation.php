@@ -135,10 +135,11 @@ return [
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute must be a valid URL.',
     'uuid' => 'The :attribute must be a valid UUID.',
-    'space_for_guests' => 'The selected table does not have enough space for guests',
-    'in_range_for_reservation' => 'Please choose the date between a week from now and the time between 17:00-23:00',
-    'available_for_reservation' => 'The selected date and time is already occupied for the selected table',
+
     'alert' => 'An error occurred while processing your request',
+    'available_for_reservation' => 'The selected date and time is already occupied for the selected table',
+    'in_range_for_reservation' => 'Please choose the date between a week from now and the time between 17:00-23:00',
+    'space_for_guests' => 'The selected table does not have enough space for guests',
 
     /*
     |--------------------------------------------------------------------------
@@ -168,6 +169,23 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'categories'   => 'categories',
+        'created_at'   => 'created at',
+        'date'         => 'date',
+        'description'  => 'description',
+        'email'        => 'email',
+        'first_name'   => 'first name',
+        'guest_number' => 'guests',
+        'image'        => 'image',
+        'last_name'    => 'last name',
+        'location'     => 'location',
+        'name'         => 'name',
+        'password'     => 'password',
+        'phone'        => 'phone',
+        'price'        => 'price',
+        'status'       => 'status',
+        'table'        => 'table',
+    ],
 
 ];

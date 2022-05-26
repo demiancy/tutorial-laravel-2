@@ -46,7 +46,7 @@ class ReservationController extends Controller
         Reservation::create($request->validated());
 
         return to_route('admin.reservations.index')
-            ->with('success', 'Reservation created successfully.');
+            ->with('success', __('admin.reservation.create.success'));
     }
 
     /**
@@ -86,7 +86,7 @@ class ReservationController extends Controller
         $reservation->update($request->validated());
 
         return to_route('admin.reservations.index')
-            ->with('success', 'Reservation updated successfully.');
+            ->with('success', __('admin.reservation.edit.success'));
     }
 
     /**
@@ -99,10 +99,10 @@ class ReservationController extends Controller
     {
         if (!$reservation->delete()) {
             return to_route('admin.reservations.index')
-                ->with('danger', __('The reservation cannot delete.'));
+                ->with('danger', __('admin.reservation.delete.danger'));
         }
 
         return to_route('admin.reservations.index')
-            ->with('success', 'Reservation deleted successfully.');
+            ->with('success', __('admin.reservation.delete.success'));
     }
 }

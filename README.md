@@ -13,6 +13,7 @@ https://www.youtube.com/watch?v=8KaBeq9JzrQ
 * The admin middleware it was replaced by middleware of spatie/laravel-permission.
 * I added more validations on forms.
 * It is assumed that a table is occupied between 1 and 2 hours.
+* The app is prepared to work in English or Spanish.
 
 # App
 Restaurant Reservation Website

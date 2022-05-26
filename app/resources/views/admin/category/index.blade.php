@@ -1,10 +1,10 @@
 <x-layouts.admin>
-    <x-admin.common.title title="Categories"/>
+    <x-admin.common.title :title="__('admin.category.index.title')"/>
 
     <div class="flex justify-end">
         <x-admin.index.new-link 
             :route="route('admin.categories.create')"
-            :text="__('New category')"
+            :text="__('admin.category.action.create')"
         />
     </div>
 

@@ -1,10 +1,10 @@
 <x-layouts.admin>
-    <x-admin.common.title title="Menus"/>
+    <x-admin.common.title :title="__('admin.menu.index.title')"/>
 
     <div class="flex justify-end">
         <x-admin.index.new-link 
             :route="route('admin.menus.create')"
-            :text="__('New menu')"
+            :text="__('admin.menu.action.create')"
         />
     </div>
 

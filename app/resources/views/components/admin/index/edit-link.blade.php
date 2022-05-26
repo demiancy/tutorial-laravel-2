@@ -1,6 +1,6 @@
 @props([
     'route' => '#',
-    'text'  => __('edit')
+    'text'  => __('admin.common.edit')
 ])
 
 <a 

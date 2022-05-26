@@ -1,10 +1,10 @@
 <x-layouts.admin>
-    <x-admin.common.title title="Tables"/>
+    <x-admin.common.title :title="__('admin.table.index.title')"/>
 
     <div class="flex justify-end">
         <x-admin.index.new-link 
             :route="route('admin.tables.create')"
-            :text="__('New table')"
+            :text="__('admin.table.action.create')"
         />
     </div>
 

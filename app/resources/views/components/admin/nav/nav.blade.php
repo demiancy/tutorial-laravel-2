@@ -15,35 +15,35 @@
             :href="route('admin.dashboard')"
             :active="request()->routeIs('admin.dashboard')"
         >
-            {{ __('Dashboard') }}
+            {{ __('admin.nav.dashboard') }}
         </x-admin.nav.link>
 
         <x-admin.nav.link
             :href="route('admin.categories.index')"
             :active="request()->routeIs('admin.categories.index')"
         >
-            {{ __('Categories') }}
+            {{ __('admin.nav.category') }}
         </x-admin.nav.link>
 
         <x-admin.nav.link
             :href="route('admin.menus.index')"
             :active="request()->routeIs('admin.menus.index')"
         >
-            {{ __('Menus') }}
+            {{ __('admin.nav.menu') }}
         </x-admin.nav.link>
 
         <x-admin.nav.link
             :href="route('admin.tables.index')"
             :active="request()->routeIs('admin.tables.index')"
         >
-            {{ __('Tables') }}
+            {{ __('admin.nav.table') }}
         </x-admin.nav.link>
 
         <x-admin.nav.link
             :href="route('admin.reservations.index')"
             :active="request()->routeIs('admin.reservations.index')"
         >
-            {{ __('Reservations') }}
+            {{ __('admin.nav.reservation') }}
         </x-admin.nav.link>
 
         <div @click.away="open = false" class="relative" x-data="{ open: false }">

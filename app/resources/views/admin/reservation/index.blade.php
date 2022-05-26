@@ -1,10 +1,10 @@
 <x-layouts.admin>
-    <x-admin.common.title title="Reservations"/>
+    <x-admin.common.title :title="__('admin.reservation.index.title')"/>
 
     <div class="flex justify-end">
         <x-admin.index.new-link 
             :route="route('admin.reservations.create')"
-            :text="__('New reservation')"
+            :text="__('admin.reservation.action.create')"
         />
     </div>
 

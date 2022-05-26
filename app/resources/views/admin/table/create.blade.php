@@ -1,29 +1,31 @@
 <x-layouts.admin>
-    <x-admin.common.title title="New table"/>
+    <x-admin.common.title :title="__('admin.table.create.title')"/>
 
     <x-admin.form.container-form>
         <form method="POST" action="{{ route('admin.tables.store') }}" enctype="multipart/form-data">
             @csrf
-            <x-admin.form.container-field field="name">
-                <x-admin.form.field field="name"/>
-            </x-admin.form.field>
+            <x-admin.form.input-field 
+                field="name"
+                :label="__('model.common.name')"
+            />
 
-            <x-admin.form.container-field field="guest_number">
-                <x-admin.form.field 
-                    field="guest_number" 
-                    type="number"
-                    min="0" 
-                    max="10" 
-                />
-            </x-admin.form.field>
+            <x-admin.form.input-field 
+                field="guest_number"
+                :label="__('model.table.guest_number')"
+                type="number"
+                min="0" 
+                max="10" 
+            />
 
-            <x-admin.form.container-field field="status">
-                <x-admin.form.field field="status"/>
-            </x-admin.form.field>
+            <x-admin.form.input-field 
+                field="status"
+                :label="__('model.table.status')"
+            />
 
-            <x-admin.form.container-field field="location">
-                <x-admin.form.field field="location"/>
-            </x-admin.form.field>
+            <x-admin.form.input-field 
+                field="location"
+                :label="__('model.table.location')"
+            />
 
             <div class="mt-6 flex">
                 <x-admin.form.back-link :route="route('admin.tables.index')"/>

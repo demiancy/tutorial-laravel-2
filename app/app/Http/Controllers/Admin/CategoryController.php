@@ -59,7 +59,7 @@ class CategoryController extends Controller
         ]);
 
         return to_route('admin.categories.index')
-            ->with('success', __('Category created successfully.'));
+            ->with('success', __('admin.category.create.success'));
     }
 
     /**
@@ -109,7 +109,7 @@ class CategoryController extends Controller
         ]);
 
         return to_route('admin.categories.index')
-            ->with('success', 'Category updated successfully.');
+            ->with('success', __('admin.category.edit.success'));
     }
 
     /**
@@ -124,12 +124,12 @@ class CategoryController extends Controller
 
         if (!$category->delete()) {
             return to_route('admin.categories.index')
-                ->with('danger', __('The category cannot delete'));
+                ->with('danger', __('admin.category.delete.danger'));
         }
 
         Storage::delete($category->image);
 
         return to_route('admin.categories.index')
-            ->with('success', 'Category deleted successfully.');
+            ->with('success', __('admin.category.delete.success'));
     }
 }

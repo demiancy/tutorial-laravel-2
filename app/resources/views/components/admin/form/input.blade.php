@@ -1,7 +1,7 @@
 @props([
     'field' => 'field',
     'type'  => 'text',
-    'value' => ''
+    'value' => '',
 ])
 
 @php
@@ -15,4 +15,3 @@
     name="{{ $field }}" 
     value="{{ old($field, $value) }}"
 />
-

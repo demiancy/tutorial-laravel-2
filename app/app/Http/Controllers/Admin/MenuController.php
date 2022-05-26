@@ -39,7 +39,7 @@ class MenuController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\MenuStoreRequest  $request
+     * @param  MenuStoreRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(MenuStoreRequest $request)
@@ -58,7 +58,7 @@ class MenuController extends Controller
         }
 
         return to_route('admin.menus.index')
-            ->with('success', 'Menu created successfully.');
+            ->with('success', __('admin.menu.create.success'));
     }
 
     /**
@@ -89,7 +89,7 @@ class MenuController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\MenuUpdateRequest  $request
+     * @param  MenuUpdateRequest  $request
      * @param  Menu  $menu
      * @return \Illuminate\Http\Response
      */
@@ -114,7 +114,7 @@ class MenuController extends Controller
         }
 
         return to_route('admin.menus.index')
-            ->with('success', 'Menu updated successfully.');
+            ->with('success', __('admin.menu.edit.success'));
     }
 
     /**
@@ -129,12 +129,12 @@ class MenuController extends Controller
 
         if (!$menu->delete()) {
             return to_route('admin.menus.index')
-                ->with('danger', __('The menu cannot delete'));
+                ->with('danger', __('admin.menu.delete.danger'));
         }
 
         Storage::delete($menu->image);
 
         return to_route('admin.menus.index')
-            ->with('success', 'Menu deleted successfully.');
+            ->with('success', __('admin.menu.delete.success'));
     }
 }

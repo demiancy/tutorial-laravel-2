@@ -35,7 +35,7 @@ class TableController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\TableStoreRequest  $request
+     * @param  TableStoreRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(TableStoreRequest $request)
@@ -48,7 +48,7 @@ class TableController extends Controller
         ]);
 
         return to_route('admin.tables.index')
-            ->with('success', 'Table created successfully.');
+            ->with('success', __('admin.table.create.success'));
     }
 
     /**
@@ -78,7 +78,7 @@ class TableController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\TableUpdateRequest  $request
+     * @param  TableUpdateRequest  $request
      * @param  Table  $table
      * @return \Illuminate\Http\Response
      */
@@ -87,7 +87,7 @@ class TableController extends Controller
         $table->update($request->validated());
 
         return to_route('admin.tables.index')
-            ->with('success', 'Table updated successfully.');
+            ->with('success', __('admin.table.edit.success'));
     }
 
     /**
@@ -100,10 +100,10 @@ class TableController extends Controller
     {
         if (!$table->delete()) {
             return to_route('admin.tables.index')
-                ->with('danger', __('The table cannot delete'));
+                ->with('danger', __('admin.table.delete.danger'));
         }
 
         return to_route('admin.tables.index')
-            ->with('success', 'Table deleted successfully.');
+            ->with('success', __('admin.table.delete.success'));
     }
 }
