@@ -10,7 +10,7 @@ return [
     | The following language lines contain the texts for admin views.
     |
     */
-    
+
     'common' => [
         'actions' => 'Acciones',
         'edit'    => 'Editar',

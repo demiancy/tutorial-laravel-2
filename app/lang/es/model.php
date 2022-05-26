@@ -7,10 +7,10 @@ return [
     | Model Language Lines
     |--------------------------------------------------------------------------
     |
-    | The following language lines contain the texts related to the model. 
+    | The following language lines contain the texts related to the model.
     |
     */
-    
+
     'common' => [
         'name'        => 'Nombre',
         'description' => 'Descripción',
