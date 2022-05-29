@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html 
+    lang="{{ str_replace('_', '-', app()->getLocale()) }}"
+>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,9 +18,12 @@
         @stack('styles')
 
         <!-- Scripts -->
+        @include('common.scripts.theme')
         <script src="{{ asset('js/app.js') }}" defer></script>
         @stack('scripts')
     </head>
 
-    {{ $slot }}
+    <body class="font-sans antialiased">
+        {{ $slot }}
+    </body>
 </html>
