@@ -1,6 +1,6 @@
 @props(['tables'])
 
-<table class="min-w-full">
+<table class="min-w-full table-auto">
     <thead class="bg-gray-50 dark:bg-gray-700">
         <tr>
             <x-admin.index.th>{{ __('model.common.name') }}</x-admin.index.th>
@@ -8,7 +8,7 @@
             <x-admin.index.th>{{ __('model.table.status') }}</x-admin.index.th>
             <x-admin.index.th>{{ __('model.table.location') }}</x-admin.index.th>
 
-            <th scope="col" class="relative py-3 px-6">
+            <th scope="col" class="py-3 px-6 w-44">
                 <span class="sr-only">{{ __('admin.common.actions') }}</span>
             </th>
         </tr>
