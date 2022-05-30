@@ -15,7 +15,7 @@ class MenuSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=1; $i <= 10; $i++) {
+        for ($i=1; $i <= 100; $i++) {
             Menu::create([
                 'name'        => "Menu $i",
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel posuere odio, quis venenatis metus. Sed mauris eros, vehicula eget posuere at, blandit eu velit. Vestibulum venenatis libero tellus, nec accumsan ex gravida eu.',

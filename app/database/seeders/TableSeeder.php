@@ -15,7 +15,7 @@ class TableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=1; $i <= 8; $i++) {
+        for ($i=1; $i <= 100; $i++) {
             Table::create([
                 'name'         => "Table $i",
                 'guest_number' => random_int(1, 6),

@@ -17,6 +17,10 @@
                     />
                 </div>
             </div>
+
+            <div class="inline-block my-6 min-w-full sm:px-6 lg:px-8">
+                {{ $menus->links() }}
+            </div>
         </div>
     </div>    
 </x-layouts.admin>
