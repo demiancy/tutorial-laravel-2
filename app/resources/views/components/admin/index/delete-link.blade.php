@@ -12,6 +12,6 @@
     @csrf
     @method('DELETE')
     <button type="submit">
-        {{ $text }}
+        <i class="fa-solid fa-trash-can text-xs"></i> {{ $text }}
     </button>
 </form>

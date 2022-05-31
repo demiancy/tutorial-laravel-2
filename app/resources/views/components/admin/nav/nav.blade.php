@@ -16,35 +16,35 @@
             :href="route('admin.dashboard')"
             :active="request()->routeIs('admin.dashboard')"
         >
-            {{ __('admin.nav.dashboard') }}
+            <i class="fa-solid fa-gauge"></i> {{ __('admin.nav.dashboard') }}
         </x-admin.nav.link>
 
         <x-admin.nav.link
             :href="route('admin.categories.index')"
             :active="request()->routeIs('admin.categories.index')"
         >
-            {{ __('admin.nav.category') }}
+            <i class="fa-solid fa-tags"></i> {{ __('admin.nav.category') }}
         </x-admin.nav.link>
 
         <x-admin.nav.link
             :href="route('admin.menus.index')"
             :active="request()->routeIs('admin.menus.index')"
         >
-            {{ __('admin.nav.menu') }}
+            <i class="fa-solid fa-utensils"> </i></i> {{ __('admin.nav.menu') }}
         </x-admin.nav.link>
 
         <x-admin.nav.link
             :href="route('admin.tables.index')"
             :active="request()->routeIs('admin.tables.index')"
         >
-            {{ __('admin.nav.table') }}
+            <i class="fa-solid fa-table"></i> {{ __('admin.nav.table') }}
         </x-admin.nav.link>
 
         <x-admin.nav.link
             :href="route('admin.reservations.index')"
             :active="request()->routeIs('admin.reservations.index')"
         >
-            {{ __('admin.nav.reservation') }}
+            <i class="fa-solid fa-calendar-days"></i> {{ __('admin.nav.reservation') }}
         </x-admin.nav.link>
 
         <div @click.away="open = false" class="relative" x-data="{ open: false }">
