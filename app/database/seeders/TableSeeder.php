@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Table;
+use App\Enums\TableStatus;
 
 class TableSeeder extends Seeder
 {
@@ -19,7 +20,7 @@ class TableSeeder extends Seeder
             Table::create([
                 'name'         => "Table $i",
                 'guest_number' => random_int(1, 6),
-                'status'       => 'avalible',
+                'status'       => TableStatus::getRandomValue(),
                 'location'     => "position $i",
             ]);
         }

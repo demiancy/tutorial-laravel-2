@@ -18,10 +18,9 @@
             :value="$table->guest_number"
         />
 
-        <x-admin.form.input-field 
-            field="status"
-            :label="__('model.table.status')"
-            :value="$table->status"
+        <x-admin.table.status-select 
+            :statuses="$statuses"
+            :selected="$table->status->value"
         />
 
         <x-admin.form.input-field 

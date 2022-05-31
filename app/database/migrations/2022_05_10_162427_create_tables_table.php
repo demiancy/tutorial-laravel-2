@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Enums\TableStatus;
 
 return new class () extends Migration {
     /**
@@ -16,7 +17,7 @@ return new class () extends Migration {
             $table->id();
             $table->string('name')->unique();
             $table->integer('guest_number');
-            $table->string('status')->default('avalible');
+            $table->enum('status', TableStatus::getValues())->default(TableStatus::Available);
             $table->string('location');
             $table->timestamps();
         });

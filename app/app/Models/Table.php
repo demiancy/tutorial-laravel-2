@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Kyslik\ColumnSortable\Sortable;
+use App\Enums\TableStatus;
 
 class Table extends Model
 {
@@ -21,6 +22,15 @@ class Table extends Model
         'guest_number',
         'status',
         'location',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'status' => TableStatus::class,
     ];
 
     /**

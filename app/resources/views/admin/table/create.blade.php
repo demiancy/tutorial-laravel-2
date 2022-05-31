@@ -15,9 +15,8 @@
             max="10" 
         />
 
-        <x-admin.form.input-field 
-            field="status"
-            :label="__('model.table.status')"
+        <x-admin.table.status-select 
+            :statuses="$statuses"
         />
 
         <x-admin.form.input-field 

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Table;
 use App\Http\Requests\TableStoreRequest;
 use App\Http\Requests\TableUpdateRequest;
+use App\Enums\TableStatus;
 
 class TableController extends Controller
 {
@@ -35,7 +35,8 @@ class TableController extends Controller
     public function create()
     {
         return view('admin.table.create', [
-            'params' => $this->permittedRequestParams(),
+            'statuses' => TableStatus::getInstances(),
+            'params'   => $this->permittedRequestParams(),
         ]);
     }
 
@@ -78,8 +79,9 @@ class TableController extends Controller
     public function edit(Table $table)
     {
         return view('admin.table.edit', [
-            'table'  => $table,
-            'params' => $this->permittedRequestParams(),
+            'table'    => $table,
+            'statuses' => TableStatus::getInstances(),
+            'params'   => $this->permittedRequestParams(),
         ]);
     }
 

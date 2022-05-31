@@ -26,6 +26,7 @@ Restaurant Reservation Website
 * laravel/breeze
 * spatie/laravel-permission
 * kyslik/column-sortable
+* bensampo/laravel-enum
 
 # Deployment
 

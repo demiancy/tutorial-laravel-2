@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Enums\TableStatus;
 
 class TableStoreRequest extends FormRequest
 {
@@ -26,7 +27,7 @@ class TableStoreRequest extends FormRequest
         return [
             'name'         => 'required|string|max:255|unique:menus',
             'guest_number' => 'required|numeric|min:1',
-            'status'       => 'required|string|max:255',
+            'status'       => 'required|enum_value:'.TableStatus::class,
             'location'     => 'required|string|max:255',
         ];
     }
