@@ -6,8 +6,9 @@ https://www.youtube.com/watch?v=8KaBeq9JzrQ
 * PHP
 * Laravel
 * Composer
+* Tailwind CSS
 
-## Notes
+## Notes and differences with respect to the tutorial
 * I used Docker.
 * Use spatie/laravel-permission instead of a boolean (is_admin) to determine the user's role.
 * The admin middleware it was replaced by middleware of spatie/laravel-permission.
@@ -15,6 +16,8 @@ https://www.youtube.com/watch?v=8KaBeq9JzrQ
 * It is assumed that a table is occupied between 1 and 2 hours.
 * The app is prepared to work in English or Spanish.
 * I added the links for sorting in the lists.
+* The app has light theme and dark theme.
+* I added pagination.
 
 # App
 Restaurant Reservation Website
