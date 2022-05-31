@@ -17,8 +17,13 @@ class TableController extends Controller
      */
     public function index()
     {
+        $tables = Table::sortable('name')
+            ->paginate(10)
+            ->appends($this->permittedRequestParams(['page']));
+
         return view('admin.table.index', [
-            'tables' => Table::paginate(10),
+            'tables' => $tables,
+            'params' => $this->permittedRequestParams(),
         ]);
     }
 
@@ -29,7 +34,9 @@ class TableController extends Controller
      */
     public function create()
     {
-        return view('admin.table.create');
+        return view('admin.table.create', [
+            'params' => $this->permittedRequestParams(),
+        ]);
     }
 
     /**
@@ -47,7 +54,7 @@ class TableController extends Controller
             'location'     => $request->location,
         ]);
 
-        return to_route('admin.tables.index')
+        return to_route('admin.tables.index', $this->permittedRequestParams())
             ->with('success', __('admin.table.create.success'));
     }
 
@@ -71,7 +78,8 @@ class TableController extends Controller
     public function edit(Table $table)
     {
         return view('admin.table.edit', [
-            'table' => $table,
+            'table'  => $table,
+            'params' => $this->permittedRequestParams(),
         ]);
     }
 
@@ -86,7 +94,7 @@ class TableController extends Controller
     {
         $table->update($request->validated());
 
-        return to_route('admin.tables.index')
+        return to_route('admin.tables.index', $this->permittedRequestParams())
             ->with('success', __('admin.table.edit.success'));
     }
 
@@ -98,12 +106,12 @@ class TableController extends Controller
      */
     public function destroy(Table $table)
     {
+        $route = to_route('admin.tables.index', $this->permittedRequestParams());
+
         if (!$table->delete()) {
-            return to_route('admin.tables.index')
-                ->with('danger', __('admin.table.delete.danger'));
+            return $route->with('danger', __('admin.table.delete.danger'));
         }
 
-        return to_route('admin.tables.index')
-            ->with('success', __('admin.table.delete.success'));
+        return $route->with('success', __('admin.table.delete.success'));
     }
 }

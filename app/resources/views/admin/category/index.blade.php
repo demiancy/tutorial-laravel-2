@@ -3,7 +3,7 @@
 
     <div class="flex justify-end">
         <x-admin.index.new-link 
-            :route="route('admin.categories.create')"
+            :route="route('admin.categories.create', $params)"
             :text="__('admin.category.action.create')"
         />
     </div>
@@ -14,6 +14,7 @@
                 <div class="overflow-hidden shadow-md sm:rounded-lg">
                     <x-admin.category.table
                         :categories="$categories"
+                        :params="$params"
                     />
                 </div>
             </div>

@@ -3,7 +3,7 @@
 
     <div class="flex justify-end">
         <x-admin.index.new-link 
-            :route="route('admin.tables.create')"
+            :route="route('admin.tables.create', $params)"
             :text="__('admin.table.action.create')"
         />
     </div>
@@ -14,6 +14,7 @@
                 <div class="overflow-hidden shadow-md sm:rounded-lg">
                     <x-admin.table.table
                         :tables="$tables"
+                        :params="$params"
                     />
                 </div>
             </div>

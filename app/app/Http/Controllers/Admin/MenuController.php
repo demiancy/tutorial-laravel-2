@@ -19,8 +19,13 @@ class MenuController extends Controller
      */
     public function index()
     {
+        $menus = Menu::sortable('name')
+            ->paginate(10)
+            ->appends($this->permittedRequestParams(['page']));
+
         return view('admin.menu.index', [
-            'menus' => Menu::paginate(10),
+            'menus'  => $menus,
+            'params' => $this->permittedRequestParams(),
         ]);
     }
 
@@ -32,7 +37,8 @@ class MenuController extends Controller
     public function create()
     {
         return view('admin.menu.create', [
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'params'     => $this->permittedRequestParams()
         ]);
     }
 
@@ -57,7 +63,7 @@ class MenuController extends Controller
             $menu->categories()->attach($request->categories);
         }
 
-        return to_route('admin.menus.index')
+        return to_route('admin.menus.index', $this->permittedRequestParams())
             ->with('success', __('admin.menu.create.success'));
     }
 
@@ -82,7 +88,8 @@ class MenuController extends Controller
     {
         return view('admin.menu.edit', [
             'menu'       => $menu,
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'params'     => $this->permittedRequestParams()
         ]);
     }
 
@@ -113,7 +120,7 @@ class MenuController extends Controller
             $menu->categories()->sync($request->categories);
         }
 
-        return to_route('admin.menus.index')
+        return to_route('admin.menus.index', $this->permittedRequestParams())
             ->with('success', __('admin.menu.edit.success'));
     }
 
@@ -126,15 +133,14 @@ class MenuController extends Controller
     public function destroy(Menu $menu)
     {
         $menu->categories()->detach();
+        $route = to_route('admin.menus.index', $this->permittedRequestParams());
 
         if (!$menu->delete()) {
-            return to_route('admin.menus.index')
-                ->with('danger', __('admin.menu.delete.danger'));
+            return $route->with('danger', __('admin.menu.delete.danger'));
         }
 
         Storage::delete($menu->image);
 
-        return to_route('admin.menus.index')
-            ->with('success', __('admin.menu.delete.success'));
+        return $route->with('success', __('admin.menu.delete.success'));
     }
 }

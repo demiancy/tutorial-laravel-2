@@ -14,6 +14,7 @@ https://www.youtube.com/watch?v=8KaBeq9JzrQ
 * I added more validations on forms.
 * It is assumed that a table is occupied between 1 and 2 hours.
 * The app is prepared to work in English or Spanish.
+* I added the links for sorting in the lists.
 
 # App
 Restaurant Reservation Website
@@ -21,6 +22,7 @@ Restaurant Reservation Website
 # Composer packages used
 * laravel/breeze
 * spatie/laravel-permission
+* kyslik/column-sortable
 
 # Deployment
 

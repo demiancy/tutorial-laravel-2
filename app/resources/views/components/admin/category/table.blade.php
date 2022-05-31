@@ -1,9 +1,12 @@
-@props(['categories'])
+@props([
+    'categories',
+    'params'     => []
+])
 
 <table class="min-w-full table-auto">
     <thead class="bg-gray-50 dark:bg-gray-700">
         <tr>
-            <x-admin.index.th>{{ __('model.common.name') }}</x-admin.index.th>
+            <x-admin.index.th>@sortablelink('name', __('model.common.name'), [],  ['rel' => 'nofollow'])</x-admin.index.th>
             <x-admin.index.th>{{ __('model.common.image') }}</x-admin.index.th>
             <x-admin.index.th>{{ __('model.common.description') }}</x-admin.index.th>
 
@@ -23,8 +26,8 @@
      
                 <x-admin.index.td>
                     <div class="grid space-y-2">
-                        <x-admin.index.edit-link :route="route('admin.categories.edit', $category->id)"/>
-                        <x-admin.index.delete-link :route="route('admin.categories.destroy', $category->id)"/>
+                        <x-admin.index.edit-link :route="route('admin.categories.edit', array_merge($params, ['category' => $category->id]))"/>
+                        <x-admin.index.delete-link :route="route('admin.categories.destroy', array_merge($params, ['category' => $category->id]))"/>
                     </div>
                 </x-admin.index.td>
             </tr>

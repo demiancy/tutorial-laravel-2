@@ -27,8 +27,13 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        $categories = Category::sortable('name')
+            ->paginate(10)
+            ->appends($this->permittedRequestParams(['page']));
+
         return view('admin.category.index', [
-            'categories' => Category::paginate(10),
+            'categories' => $categories,
+            'params'     => $this->permittedRequestParams(),
         ]);
     }
 
@@ -39,7 +44,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        return view('admin.category.create', [
+            'params' => $this->permittedRequestParams()
+        ]);
     }
 
     /**
@@ -58,7 +65,7 @@ class CategoryController extends Controller
             'image'       => $image
         ]);
 
-        return to_route('admin.categories.index')
+        return to_route('admin.categories.index', $this->permittedRequestParams())
             ->with('success', __('admin.category.create.success'));
     }
 
@@ -83,6 +90,7 @@ class CategoryController extends Controller
     {
         return view('admin.category.edit', [
             'category' => $category,
+            'params'   => $this->permittedRequestParams()
         ]);
     }
 
@@ -108,7 +116,7 @@ class CategoryController extends Controller
             'image'       => $image
         ]);
 
-        return to_route('admin.categories.index')
+        return to_route('admin.categories.index', $this->permittedRequestParams())
             ->with('success', __('admin.category.edit.success'));
     }
 
@@ -121,15 +129,14 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->menus()->detach();
+        $route = to_route('admin.categories.index', $this->permittedRequestParams());
 
         if (!$category->delete()) {
-            return to_route('admin.categories.index')
-                ->with('danger', __('admin.category.delete.danger'));
+            return $route->with('danger', __('admin.category.delete.danger'));
         }
 
         Storage::delete($category->image);
 
-        return to_route('admin.categories.index')
-            ->with('success', __('admin.category.delete.success'));
+        return $route->with('success', __('admin.category.delete.success'));
     }
 }

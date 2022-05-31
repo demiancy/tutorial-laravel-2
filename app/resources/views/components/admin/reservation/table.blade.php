@@ -1,11 +1,14 @@
-@props(['reservations'])
+@props([
+    'reservations',
+    'params'     => []
+])
 
 <table class="min-w-full table-auto">
     <thead class="bg-gray-50 dark:bg-gray-700">
         <tr>
             <x-admin.index.th>{{ __('model.common.name') }}</x-admin.index.th>
-            <x-admin.index.th>{{ __('model.reservation.email') }}</x-admin.index.th>
-            <x-admin.index.th>{{ __('model.reservation.date') }}</x-admin.index.th>
+            <x-admin.index.th>@sortablelink('email', __('model.reservation.email'), [],  ['rel' => 'nofollow'])</x-admin.index.th>
+            <x-admin.index.th>@sortablelink('date', __('model.reservation.date'), [],  ['rel' => 'nofollow'])</x-admin.index.th>
             <x-admin.index.th>{{ __('model.common.table') }}</x-admin.index.th>
             <x-admin.index.th>{{ __('model.reservation.guest_number') }}</x-admin.index.th>
 
@@ -25,9 +28,9 @@
                 <x-admin.index.td>
                     <div class="grid space-y-2">
                         @if ($reservation->canEdit())
-                            <x-admin.index.edit-link :route="route('admin.reservations.edit', $reservation->id)"/>
+                            <x-admin.index.edit-link :route="route('admin.reservations.edit', array_merge($params, ['reservation' => $reservation->id]))"/>
                         @endif
-                        <x-admin.index.delete-link :route="route('admin.reservations.destroy', $reservation->id)"/>
+                        <x-admin.index.delete-link :route="route('admin.reservations.destroy', array_merge($params, ['reservation' => $reservation->id]))"/>
                     </div>
                 </x-admin.index.td>
             </tr>

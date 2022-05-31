@@ -1,12 +1,15 @@
-@props(['tables'])
+@props([
+    'tables',
+    'params' => []
+])
 
 <table class="min-w-full table-auto">
     <thead class="bg-gray-50 dark:bg-gray-700">
         <tr>
-            <x-admin.index.th>{{ __('model.common.name') }}</x-admin.index.th>
-            <x-admin.index.th>{{ __('model.table.guest_number') }}</x-admin.index.th>
-            <x-admin.index.th>{{ __('model.table.status') }}</x-admin.index.th>
-            <x-admin.index.th>{{ __('model.table.location') }}</x-admin.index.th>
+            <x-admin.index.th>@sortablelink('name', __('model.common.name'), [],  ['rel' => 'nofollow'])</x-admin.index.th>
+            <x-admin.index.th>@sortablelink('guest_number', __('model.table.guest_number'), [],  ['rel' => 'nofollow'])</x-admin.index.th>
+            <x-admin.index.th>@sortablelink('status', __('model.table.status'), [],  ['rel' => 'nofollow'])</x-admin.index.th>
+            <x-admin.index.th>@sortablelink('location', __('model.table.location'), [],  ['rel' => 'nofollow'])</x-admin.index.th>
 
             <th scope="col" class="py-3 px-6 w-44">
                 <span class="sr-only">{{ __('admin.common.actions') }}</span>
@@ -22,8 +25,8 @@
                 <x-admin.index.td>{{ $table->location }}</x-admin.index.td>
                 <x-admin.index.td>
                     <div class="grid space-y-2">
-                        <x-admin.index.edit-link :route="route('admin.tables.edit', $table->id)"/>
-                        <x-admin.index.delete-link :route="route('admin.tables.destroy', $table->id)"/>
+                        <x-admin.index.edit-link :route="route('admin.tables.edit', array_merge($params, ['table' => $table->id]))"/>
+                        <x-admin.index.delete-link :route="route('admin.tables.destroy', array_merge($params, ['table' => $table->id]))"/>
                     </div>
                 </x-admin.index.td>
             </tr>

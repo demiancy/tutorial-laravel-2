@@ -18,8 +18,13 @@ class ReservationController extends Controller
      */
     public function index()
     {
+        $reservations = Reservation::sortable(['date' => 'desc'])
+            ->paginate(10)
+            ->appends($this->permittedRequestParams(['page']));
+
         return view('admin.reservation.index', [
-            'reservations' => Reservation::paginate(10),
+            'reservations' => $reservations,
+            'params'       => $this->permittedRequestParams(),
         ]);
     }
 
@@ -31,7 +36,8 @@ class ReservationController extends Controller
     public function create()
     {
         return view('admin.reservation.create', [
-            'tables' => Table::all()
+            'tables' => Table::all(),
+            'params' => $this->permittedRequestParams()
         ]);
     }
 
@@ -45,7 +51,7 @@ class ReservationController extends Controller
     {
         Reservation::create($request->validated());
 
-        return to_route('admin.reservations.index')
+        return to_route('admin.reservations.index', $this->permittedRequestParams())
             ->with('success', __('admin.reservation.create.success'));
     }
 
@@ -70,7 +76,8 @@ class ReservationController extends Controller
     {
         return view('admin.reservation.edit', [
             'reservation' => $reservation,
-            'tables'      => Table::all()
+            'tables'      => Table::all(),
+            'params'      => $this->permittedRequestParams()
         ]);
     }
 
@@ -85,7 +92,7 @@ class ReservationController extends Controller
     {
         $reservation->update($request->validated());
 
-        return to_route('admin.reservations.index')
+        return to_route('admin.reservations.index', $this->permittedRequestParams())
             ->with('success', __('admin.reservation.edit.success'));
     }
 
@@ -97,12 +104,12 @@ class ReservationController extends Controller
      */
     public function destroy(Reservation $reservation)
     {
+        $route = to_route('admin.reservations.index', $this->permittedRequestParams());
+
         if (!$reservation->delete()) {
-            return to_route('admin.reservations.index')
-                ->with('danger', __('admin.reservation.delete.danger'));
+            return $route->with('danger', __('admin.reservation.delete.danger'));
         }
 
-        return to_route('admin.reservations.index')
-            ->with('success', __('admin.reservation.delete.success'));
+        return $route->with('success', __('admin.reservation.delete.success'));
     }
 }
