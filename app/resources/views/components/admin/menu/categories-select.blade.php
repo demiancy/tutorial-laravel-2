@@ -4,7 +4,7 @@
 ])
 
 @php
-    $selected   = collect(old('categories', []))->merge($selected);
+    $selected = collect(old('categories', []))->merge($selected);
 @endphp
 
 <x-admin.form.container-select 
