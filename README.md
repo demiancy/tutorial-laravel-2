@@ -18,6 +18,8 @@ https://www.youtube.com/watch?v=8KaBeq9JzrQ
 * I added the links for sorting in the lists.
 * The app has light theme and dark theme.
 * I added pagination.
+* I added the Fontawesome icons.
+* The location of tables was changed to a new model (the locations of tables changes for each restaurant).
 
 # App
 Restaurant Reservation Website
