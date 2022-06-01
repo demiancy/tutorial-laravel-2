@@ -17,7 +17,7 @@
             <x-admin.form.option
                 :value="$table->id"
                 :selected="$selected == $table->id"
-                text="{{ $table->name }} ({{$table->guest_number }} {{ __('model.reservation.guest_number') }})"
+                text="{{ $table->name }} ({{ $table->guest_number }} {{ __('model.reservation.guest_number') }}, {{ $table->location->name }})"
             />
         @endforeach
     </select>

@@ -22,6 +22,7 @@ class Table extends Model
         'guest_number',
         'status',
         'location',
+        'table_location_id',
     ];
 
     /**
@@ -41,7 +42,15 @@ class Table extends Model
     public $sortable = [
         'name',
         'status',
-        'location',
+        'table_location_id',
         'guest_number',
     ];
+
+    /**
+     * The location to which the table belongs.
+     */
+    public function location()
+    {
+        return $this->belongsTo(TableLocation::class, 'table_location_id');
+    }
 }

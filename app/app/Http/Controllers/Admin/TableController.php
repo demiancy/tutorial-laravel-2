@@ -7,6 +7,7 @@ use App\Models\Table;
 use App\Http\Requests\TableStoreRequest;
 use App\Http\Requests\TableUpdateRequest;
 use App\Enums\TableStatus;
+use App\Models\TableLocation;
 
 class TableController extends Controller
 {
@@ -35,8 +36,9 @@ class TableController extends Controller
     public function create()
     {
         return view('admin.table.create', [
-            'statuses' => TableStatus::getInstances(),
-            'params'   => $this->permittedRequestParams(),
+            'statuses'  => TableStatus::getInstances(),
+            'locations' => TableLocation::all(),
+            'params'    => $this->permittedRequestParams(),
         ]);
     }
 
@@ -48,12 +50,7 @@ class TableController extends Controller
      */
     public function store(TableStoreRequest $request)
     {
-        Table::create([
-            'name'         => $request->name,
-            'guest_number' => $request->guest_number,
-            'status'       => $request->status,
-            'location'     => $request->location,
-        ]);
+        Table::create($request->validated());
 
         return to_route('admin.tables.index', $this->permittedRequestParams())
             ->with('success', __('admin.table.create.success'));
@@ -79,9 +76,10 @@ class TableController extends Controller
     public function edit(Table $table)
     {
         return view('admin.table.edit', [
-            'table'    => $table,
-            'statuses' => TableStatus::getInstances(),
-            'params'   => $this->permittedRequestParams(),
+            'table'     => $table,
+            'statuses'  => TableStatus::getInstances(),
+            'locations' => TableLocation::all(),
+            'params'    => $this->permittedRequestParams(),
         ]);
     }
 

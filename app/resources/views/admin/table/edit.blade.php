@@ -23,10 +23,9 @@
             :selected="$table->status->value"
         />
 
-        <x-admin.form.input-field 
-            field="location"
-            :label="__('model.table.location')"
-            :value="$table->location"
+        <x-admin.table.location-select 
+            :locations="$locations"
+            :selected="$table->location->id"
         />
 
         <div class="mt-6 flex">

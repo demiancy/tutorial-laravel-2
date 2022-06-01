@@ -25,10 +25,10 @@ class TableStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'         => 'required|string|max:255|unique:menus',
-            'guest_number' => 'required|numeric|min:1',
-            'status'       => 'required|enum_value:'.TableStatus::class,
-            'location'     => 'required|string|max:255',
+            'name'              => 'required|string|max:255|unique:menus',
+            'guest_number'      => 'required|numeric|min:1',
+            'status'            => 'required|enum_value:'.TableStatus::class,
+            'table_location_id' => 'required|integer|min:1|exists:table_locations,id',
         ];
     }
 }

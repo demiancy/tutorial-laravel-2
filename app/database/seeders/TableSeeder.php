@@ -18,10 +18,10 @@ class TableSeeder extends Seeder
     {
         for ($i=1; $i <= 100; $i++) {
             Table::create([
-                'name'         => "Table $i",
-                'guest_number' => random_int(1, 6),
-                'status'       => TableStatus::getRandomValue(),
-                'location'     => "position $i",
+                'name'              => "Table $i",
+                'guest_number'      => random_int(1, 6),
+                'status'            => TableStatus::getRandomValue(),
+                'table_location_id' => random_int(1, 15),
             ]);
         }
     }

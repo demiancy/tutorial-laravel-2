@@ -19,9 +19,8 @@
             :statuses="$statuses"
         />
 
-        <x-admin.form.input-field 
-            field="location"
-            :label="__('model.table.location')"
+        <x-admin.table.location-select 
+            :locations="$locations"
         />
 
         <div class="mt-6 flex">
