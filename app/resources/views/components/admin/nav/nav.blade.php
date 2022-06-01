@@ -37,7 +37,7 @@
             :href="route('admin.tables.index')"
             :active="request()->routeIs('admin.tables.index')"
         >
-            <i class="fa-solid fa-table"></i> {{ __('admin.nav.table') }}
+            <i class="fa-solid fa-square"></i> {{ __('admin.nav.table') }}
         </x-admin.nav.link>
 
         <x-admin.nav.link
