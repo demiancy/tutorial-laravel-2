@@ -9160,15 +9160,6 @@ readers do not read off random characters that represent icons */
 .fa-zhihu:before {
   content: "\f63f";
 }
-#theme-toggle-dark-button {
-  display: none;
-}
-.dark #theme-toggle-light-button {
-  display: none;
-}
-.dark #theme-toggle-dark-button {
-  display: block;
-}
 .first-letter\:uppercase::first-letter {
   text-transform: uppercase;
 }
@@ -9339,6 +9330,12 @@ readers do not read off random characters that represent icons */
 }
 .disabled\:opacity-25:disabled {
   opacity: 0.25;
+}
+.dark .dark\:block {
+  display: block;
+}
+.dark .dark\:hidden {
+  display: none;
 }
 .dark .dark\:border-gray-700 {
   --tw-border-opacity: 1;
