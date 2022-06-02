@@ -23,5 +23,10 @@ class RoleSeeder extends Seeder
         $role->givePermissionTo([
             'view_admin',
         ]);
+
+        $role = Role::create(['name' => 'operator']);
+        $role->givePermissionTo([
+            'view_admin',
+        ]);
     }
 }
