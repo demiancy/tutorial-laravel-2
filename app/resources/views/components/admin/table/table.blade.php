@@ -4,7 +4,7 @@
 ])
 
 <table class="min-w-full table-auto">
-    <thead class="bg-gray-50 dark:bg-gray-700">
+    <thead class="bg-gray-200 dark:bg-gray-700">
         <tr>
             <x-admin.index.th>@sortablelink('name', __('model.common.name'), [],  ['rel' => 'nofollow'])</x-admin.index.th>
             <x-admin.index.th>@sortablelink('guest_number', __('model.table.guest_number'), [],  ['rel' => 'nofollow'])</x-admin.index.th>
@@ -18,7 +18,7 @@
     </thead>
     <tbody>
         @foreach ($tables as $table)
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <tr class="bg-white border-2 dark:bg-gray-800 dark:border-gray-700">
                 <x-admin.index.td>{{ $table->name }}</x-admin.index.td>
                 <x-admin.index.td>{{ $table->guest_number }}</x-admin.index.td>
                 <x-admin.index.td>{{ $table->status->description }}</x-admin.index.td>

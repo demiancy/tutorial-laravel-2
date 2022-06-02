@@ -4,7 +4,7 @@
 ])
 
 <table class="min-w-full table-auto">
-    <thead class="bg-gray-50 dark:bg-gray-700">
+    <thead class="bg-gray-200 dark:bg-gray-700">
         <tr>
             <x-admin.index.th>{{ __('model.common.name') }}</x-admin.index.th>
             <x-admin.index.th>@sortablelink('email', __('model.reservation.email'), [],  ['rel' => 'nofollow'])</x-admin.index.th>

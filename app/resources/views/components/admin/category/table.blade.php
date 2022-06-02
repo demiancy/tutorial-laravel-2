@@ -4,7 +4,7 @@
 ])
 
 <table class="min-w-full table-auto">
-    <thead class="bg-gray-50 dark:bg-gray-700">
+    <thead class="bg-gray-200 dark:bg-gray-700">
         <tr>
             <x-admin.index.th>@sortablelink('name', __('model.common.name'), [],  ['rel' => 'nofollow'])</x-admin.index.th>
             <x-admin.index.th>{{ __('model.common.image') }}</x-admin.index.th>

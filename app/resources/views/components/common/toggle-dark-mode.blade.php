@@ -1,7 +1,7 @@
 <button
     id="theme-toggle-dark-button"
     type="button"
-    class="text-gray-500 dark:text-gray-400 rounded-lg text-sm p-2.5"
+    class="text-gray-900 dark:text-gray-400 rounded-lg text-sm p-2.5"
     onclick="window.toLightTheme()"
 >
     <svg
@@ -19,7 +19,7 @@
 <button
     id="theme-toggle-light-button"
     type="button"
-    class="text-gray-500 dark:text-gray-400 rounded-lg text-sm p-2.5"
+    class="text-gray-900 dark:text-gray-400 rounded-lg text-sm p-2.5"
     onclick="window.toDarkTheme()"
 >
     <svg
