@@ -14,7 +14,7 @@
 
         <x-admin.form.input-field 
             field="email"
-            :label="__('model.reservation.email')"
+            :label="__('model.common.email')"
         />
 
         <x-admin.form.input-field 

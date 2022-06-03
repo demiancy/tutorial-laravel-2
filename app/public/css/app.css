@@ -1178,6 +1178,12 @@ select {
 .uppercase {
   text-transform: uppercase;
 }
+.capitalize {
+  text-transform: capitalize;
+}
+.normal-case {
+  text-transform: none;
+}
 .leading-5 {
   line-height: 1.25rem;
 }

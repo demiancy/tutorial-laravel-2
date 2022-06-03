@@ -17,7 +17,9 @@ return [
         'image'       => 'Imagen',
         'created_at'  => 'Fecha de creación',
         'table'       => 'Mesa',
-        'categories'  => 'Categorías'
+        'categories'  => 'Categorías',
+        'email'       => 'Email',
+        'role'        => 'Rol',
     ],
     'menu' => [
         'price' => 'Precio'
@@ -30,13 +32,14 @@ return [
     'reservation' => [
         'first_name'   => 'Nombre',
         'last_name'    => 'Apellido',
-        'email'        => 'Email',
         'phone'        => 'Telefono',
         'date'         => 'Fecha',
         'guest_number' => 'comensales'
     ],
     'user' => [
-        'email'    => 'Email',
-        'password' => 'Contraseña'
+        'roles'                 => 'Roles',
+        'role'                  => 'Role',
+        'password'              => 'Contraseña',
+        'password_confirmation' => 'Confirmación de contraseña'
     ],
 ];

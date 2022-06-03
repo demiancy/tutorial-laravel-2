@@ -15,7 +15,8 @@ return [
         'image'       => 'Image',
         'created_at'  => 'Created at',
         'table'       => 'Table',
-        'categories'  => 'Categories'
+        'categories'  => 'Categories',
+        'email'       => 'Email',
     ],
     'menu' => [
         'price' => 'Price'
@@ -28,13 +29,14 @@ return [
     'reservation' => [
         'first_name'   => 'First name',
         'last_name'    => 'Last name',
-        'email'        => 'Email',
         'phone'        => 'Phone',
         'date'         => 'Date',
         'guest_number' => 'Guests'
     ],
     'user' => [
-        'email'    => 'Email',
-        'password' => 'Password'
+        'roles'                 => 'Roles',
+        'role'                  => 'Role',
+        'password'              => 'Password',
+        'password_confirmation' => 'Password confirmation'
     ],
 ];

@@ -30,6 +30,7 @@ return [
         'menu'        => 'Menús',
         'table'       => 'Mesas',
         'reservation' => 'Reservaciones',
+        'user'        => 'Usuarios',
     ],
     'dashboard' => [
         'index' => [
@@ -114,6 +115,26 @@ return [
         ],
         'action' => [
             'create' => 'Nueva reservacion',
+        ],
+    ],
+    'user' => [
+        'index' => [
+            'title' => 'Usuarios',
+        ],
+        'create' => [
+            'title'   => 'Nuevo usuario',
+            'success' => 'Usuario creado con éxito'
+        ],
+        'edit'   => [
+            'title'   => 'Edición del usuario :name',
+            'success' => 'Usuario actualizado con éxito'
+        ],
+        'delete' => [
+            'success' => 'Usuario eliminado con éxito',
+            'danger'  => 'El usuario no se puede borrar'
+        ],
+        'action' => [
+            'create' => 'Nuevo usuario',
         ],
     ],
 ];

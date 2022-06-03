@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Kyslik\ColumnSortable\Sortable;
 
 class User extends Authenticatable
 {
@@ -15,6 +16,7 @@ class User extends Authenticatable
     use HasFactory;
     use Notifiable;
     use HasRoles;
+    use Sortable;
 
     /**
      * The attributes that are mass assignable.
@@ -44,5 +46,15 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+    ];
+
+    /**
+     * Sortable attributes.
+     *
+     * @var array<int, string>
+     */
+    public $sortable = [
+        'name',
+        'email'
     ];
 }

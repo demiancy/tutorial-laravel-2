@@ -28,6 +28,7 @@ return [
         'menu'        => 'Menus',
         'table'       => 'Tables',
         'reservation' => 'Reservations',
+        'user'        => 'Users',
     ],
     'dashboard' => [
         'index' => [
@@ -112,6 +113,26 @@ return [
         ],
         'action' => [
             'create' => 'New reservation',
+        ],
+    ],
+    'user' => [
+        'index' => [
+            'title' => 'Users',
+        ],
+        'create' => [
+            'title'   => 'New user',
+            'success' => 'User created successfully'
+        ],
+        'edit'   => [
+            'title'   => 'Edit user :name',
+            'success' => 'User updated successfully'
+        ],
+        'delete' => [
+            'success' => 'User deleted successfully',
+            'danger'  => 'The user cannot delete'
+        ],
+        'action' => [
+            'create' => 'New user',
         ],
     ],
 ];
