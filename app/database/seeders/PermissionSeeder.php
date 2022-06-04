@@ -20,6 +20,10 @@ class PermissionSeeder extends Seeder
 
         $data = [
             'view_admin',
+            'view_categories',
+            'update_categories',
+            'create_categories',
+            'delete_categories',
         ];
 
         foreach ($data as $name) {

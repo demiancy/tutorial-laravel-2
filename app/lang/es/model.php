@@ -42,4 +42,7 @@ return [
         'password'              => 'Contraseña',
         'password_confirmation' => 'Confirmación de contraseña'
     ],
+    'role' => [
+        'permissions' => 'Permisos',
+    ],
 ];

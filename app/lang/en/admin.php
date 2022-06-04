@@ -29,6 +29,7 @@ return [
         'table'       => 'Tables',
         'reservation' => 'Reservations',
         'user'        => 'Users',
+        'role'        => 'Roles',
     ],
     'dashboard' => [
         'index' => [
@@ -133,6 +134,26 @@ return [
         ],
         'action' => [
             'create' => 'New user',
+        ],
+    ],
+    'role' => [
+        'index' => [
+            'title' => 'Roles',
+        ],
+        'create' => [
+            'title'   => 'New role',
+            'success' => 'Role created successfully'
+        ],
+        'edit'   => [
+            'title'   => 'Edit role :name',
+            'success' => 'Role updated successfully'
+        ],
+        'delete' => [
+            'success' => 'Role deleted successfully',
+            'danger'  => 'The role cannot delete'
+        ],
+        'action' => [
+            'create' => 'New role',
         ],
     ],
 ];

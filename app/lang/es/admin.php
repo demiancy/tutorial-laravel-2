@@ -31,6 +31,7 @@ return [
         'table'       => 'Mesas',
         'reservation' => 'Reservaciones',
         'user'        => 'Usuarios',
+        'role'        => 'Roles',
     ],
     'dashboard' => [
         'index' => [
@@ -135,6 +136,26 @@ return [
         ],
         'action' => [
             'create' => 'Nuevo usuario',
+        ],
+    ],
+    'role' => [
+        'index' => [
+            'title' => 'Roles',
+        ],
+        'create' => [
+            'title'   => 'Nuevo rol',
+            'success' => 'Rol creado con éxito'
+        ],
+        'edit'   => [
+            'title'   => 'Edición del rol :name',
+            'success' => 'Rol actualizado con éxito'
+        ],
+        'delete' => [
+            'success' => 'Rol eliminado con éxito',
+            'danger'  => 'El rol no se puede borrar'
+        ],
+        'action' => [
+            'create' => 'Nuevo rol',
         ],
     ],
 ];

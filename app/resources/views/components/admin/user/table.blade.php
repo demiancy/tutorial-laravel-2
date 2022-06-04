@@ -1,5 +1,5 @@
 @props([
-    'users',
+    'users'  => [],
     'params' => []
 ])
 

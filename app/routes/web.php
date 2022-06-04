@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\ReservationController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,7 @@ Route::middleware(['auth', 'can:view_admin'])
         Route::resource('/tables', TableController::class);
         Route::resource('/reservations', ReservationController::class);
         Route::resource('/users', UserController::class);
+        Route::resource('/roles', RoleController::class);
     });
 
 require __DIR__.'/auth.php';

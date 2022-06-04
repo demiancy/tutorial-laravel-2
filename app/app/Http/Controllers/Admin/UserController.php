@@ -126,7 +126,6 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //$user->menus()->detach();
         $route = to_route('admin.users.index', $this->permittedRequestParams());
 
         if (!$user->delete()) {
