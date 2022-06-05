@@ -15,6 +15,7 @@
         <x-admin.nav.link
             :href="route('admin.dashboard')"
             :active="request()->routeIs('admin.dashboard')"
+            :enable="Auth::user()->can('view_admin')"
         >
             <i class="fa-solid fa-gauge w-5 text-center"></i> {{ __('admin.nav.dashboard') }}
         </x-admin.nav.link>
@@ -22,6 +23,7 @@
         <x-admin.nav.link
             :href="route('admin.categories.index')"
             :active="request()->routeIs('admin.categories.index')"
+            :enable="Auth::user()->can('view_categories')"
         >
             <i class="fa-solid fa-tags w-5 text-center"></i> {{ __('admin.nav.category') }}
         </x-admin.nav.link>
@@ -29,6 +31,7 @@
         <x-admin.nav.link
             :href="route('admin.menus.index')"
             :active="request()->routeIs('admin.menus.index')"
+            :enable="Auth::user()->can('view_menus')"
         >
             <i class="fa-solid fa-utensils w-5 text-center"> </i></i> {{ __('admin.nav.menu') }}
         </x-admin.nav.link>
@@ -36,6 +39,7 @@
         <x-admin.nav.link
             :href="route('admin.tables.index')"
             :active="request()->routeIs('admin.tables.index')"
+            :enable="Auth::user()->can('view_tables')"
         >
             <i class="fa-solid fa-square w-5 text-center"></i> {{ __('admin.nav.table') }}
         </x-admin.nav.link>
@@ -43,6 +47,7 @@
         <x-admin.nav.link
             :href="route('admin.reservations.index')"
             :active="request()->routeIs('admin.reservations.index')"
+            :enable="Auth::user()->can('view_reservations')"
         >
             <i class="fa-solid fa-calendar-days w-5 text-center"></i> {{ __('admin.nav.reservation') }}
         </x-admin.nav.link>
@@ -50,6 +55,7 @@
         <x-admin.nav.link
             :href="route('admin.users.index')"
             :active="request()->routeIs('admin.users.index')"
+            :enable="Auth::user()->can('view_users')"
         >
             <i class="fa-solid fa-users w-5 text-center"></i> {{ __('admin.nav.user') }}
         </x-admin.nav.link>
@@ -57,6 +63,7 @@
         <x-admin.nav.link
             :href="route('admin.roles.index')"
             :active="request()->routeIs('admin.roles.index')"
+            :enable="Auth::user()->can('view_roles')"
         >
             <i class="fa-solid fa-key w-5 text-center"></i> {{ __('admin.nav.role') }}
         </x-admin.nav.link>

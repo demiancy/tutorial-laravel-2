@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Storage;
 class MenuController extends Controller
 {
     /**
+     * Create the controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->authorizeResource(Menu::class, 'menu');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
