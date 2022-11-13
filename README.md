@@ -47,6 +47,14 @@ You must prepare your database (which must be previously created and emptied), f
     docker-compose run app php artisan migrate:fresh
     docker-compose run app php artisan db:seed
 
+    or 
+
+    docker-compose run app build
+
+You must compile the assets
+
+    docker-compose run app npm run dev
+
 With the next command you start the app in the port 3000 and phpmyadmin in port 80
 
     docker-compose up
