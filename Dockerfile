@@ -1,4 +1,4 @@
-FROM php:8.1.3-apache-buster
+FROM php:8.1.9-apache-buster
 
 ARG USER=docker
 ARG USER_UID=1000
@@ -29,6 +29,9 @@ RUN set -xe \
     && chmod +x phpDocumentor.phar \
     && mv phpDocumentor.phar /usr/bin/phpdoc \
     && echo "alias phpdoc_all='phpdoc -d /home/${USER} -t /home/${USER}/documentation --ignore \"vendor/\"'" >> /etc/bash.bashrc
+
+RUN echo "alias build='php artisan migrate:fresh && php artisan db:seed'" >> /etc/bash.bashrc
+RUN echo "alias pest='./vendor/bin/pest'" >> /etc/bash.bashrc
 
 #Instala Node Js
 RUN set -xe \
