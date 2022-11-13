@@ -1,20 +1,16 @@
+# Composer and Npm
+app/.config/composer
+app/.local/share/composer
 app/vendor/
 app/node_modules/
 app/npm-debug.log
 app/yarn-error.log
+app/.npm/
 
-# Laravel 4 specific
-app/bootstrap/compiled.php
-app/app/storage/
-
-# Laravel 5 & Lumen specific
-app/public/storage
-app/public/hot
-
-# Laravel 5 & Lumen specific with changed public path
-app/public_html/storage
-app/public_html/hot
-
+# Laravel
+app/public/css/app.css
+app/public/fonts/vendor
+app/public/js/app.js
 app/storage/*.key
 app/.env
 app/Homestead.yaml
@@ -22,8 +18,14 @@ app/Homestead.json
 app/.vagrant
 app/.phpunit.result.cache
 app/.cache/
-app/.npm/
+app/bootstrap/compiled.php
+app/app/storage/
+app/public_html/storage
+app/public_html/hot
+app/public/storage
+app/public/hot
 
+# Dev
 *.code-workspace
 app/.bash_history
-app/build.sh
+app/.php-cs-fixer.cache
